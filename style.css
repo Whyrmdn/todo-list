@@ -1,0 +1,22 @@
+body {
+  background-color: #4b0082;
+}
+
+.card {
+  margin-top: 20px;
+}
+
+.list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list-group-item span {
+  display: flex;
+  align-items: center;
+}
+
+.badge {
+  margin-left: 10px;
+}

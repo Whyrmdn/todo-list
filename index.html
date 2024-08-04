@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body
+    class="bg-primary d-flex justify-content-center align-items-center vh-100"
+  >
+    <div class="card" style="width: 400px">
+      <div class="card-header">
+        <h4 class="card-title">Task Lists</h4>
+      </div>
+      <ul class="list-group list-group-flush" id="task-list">
+        <!-- Task items will be added here dynamically -->
+      </ul>
+      <div class="card-footer d-flex justify-content-between">
+        <button class="btn btn-secondary" onclick="clearTasks()">Cancel</button>
+        <button class="btn btn-primary" onclick="addTask()">Add Task</button>
+      </div>
+    </div>
+
+    <!-- Task Modal -->
+    <div
+      class="modal fade"
+      id="taskModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="taskModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="taskModalLabel">New Task</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="taskForm">
+              <div class="form-group">
+                <label for="taskName">Task Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="taskName"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="taskOwner">Owner</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="taskOwner"
+                  required
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="submitTask()"
+            >
+              Save Task
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
